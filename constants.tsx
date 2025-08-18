@@ -114,11 +114,30 @@ export const ICONS: Record<string, React.FC> = {
   check: QualityIcon,
 };
 
-export const blogAuthor: Author = {
-  name: 'Alex Johnson',
-  role: 'Cleaning Expert & Content Lead',
-  avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&auto=format&fit=crop&q=60',
-};
+const blogAuthors: Author[] = [
+    {
+      name: 'Bushra Rizwan',
+      role: 'Lead Content Creator',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&auto=format&fit=crop&q=60',
+    },
+    {
+      name: 'Burhan Rizwan',
+      role: 'Technical Cleaning Specialist',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&auto=format&fit=crop&q=60',
+    },
+    {
+      name: 'Maryum Younus',
+      role: 'Home Organization Expert',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&auto=format&fit=crop&q=60',
+    },
+    {
+      name: 'Alex Johnson',
+      role: 'Cleaning Expert & Content Lead',
+      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&auto=format&fit=crop&q=60',
+    }
+];
+
+export const blogAuthor: Author = blogAuthors[0];
 
 // --- CONTENT DEFINITIONS ---
 
@@ -144,10 +163,10 @@ const allServices: Service[] = [
             { id: 'rc-faq-3', question: 'Can I request special attention to certain areas?', answer: 'Absolutely! We encourage you to let us know of any specific areas or tasks you\'d like us to focus on. We can customize the cleaning plan to meet your needs.' }
         ], 
         packageIncludes: [
-            { id: 'rc-pi-1', icon: 'kitchen', title: 'Kitchen Cleaning', description: 'Countertops, sink, appliance exteriors, floors.' },
-            { id: 'rc-pi-2', icon: 'mop', title: 'Bathroom Sanitization', description: 'Toilets, showers, sinks, and floors scrubbed and disinfected.' },
-            { id: 'rc-pi-3', icon: 'sofa', title: 'Living Areas', description: 'Dusting all surfaces, vacuuming carpets, tidying up.' },
-            { id: 'rc-pi-4', icon: 'window', title: 'Bedroom Tidying', description: 'Making beds, dusting furniture, vacuuming or mopping.' }
+            { id: 'rc-pi-1', icon: 'kitchen', title: 'Kitchen Cleaning', description: 'Countertops, sink, appliance exteriors, floors.', image: 'https://images.unsplash.com/photo-1600585152220-01629c74D38c?auto=format&fit=crop&w=600&q=60' },
+            { id: 'rc-pi-2', icon: 'mop', title: 'Bathroom Sanitization', description: 'Toilets, showers, sinks, and floors scrubbed and disinfected.', image: 'https://images.unsplash.com/photo-1581622323338-232def4142b9?auto=format&fit=crop&w=600&q=60' },
+            { id: 'rc-pi-3', icon: 'sofa', title: 'Living Areas', description: 'Dusting all surfaces, vacuuming carpets, tidying up.', image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=600&q=60' },
+            { id: 'rc-pi-4', icon: 'window', title: 'Bedroom Tidying', description: 'Making beds, dusting furniture, vacuuming or mopping.', image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16da31?auto=format&fit=crop&w=600&q=60' }
         ],
         keyBenefits: [
             { id: 'rc-kb-1', icon: 'time', title: 'More Free Time', description: 'Reclaim your weekends and spend more time on what you love.' },
@@ -176,10 +195,10 @@ const allServices: Service[] = [
             { id: 'oc-faq-3', question: 'Do you offer customized cleaning checklists?', answer: 'Absolutely. We work with each client to develop a customized cleaning plan that meets the specific needs, schedule, and budget of their facility.' }
         ],
         packageIncludes: [
-            { id: 'oc-pi-1', icon: 'office', title: 'Workstation Sanitization', description: 'Desks, chairs, and high-touch surfaces.' },
-            { id: 'oc-pi-2', icon: 'clean', title: 'Common Area Cleaning', description: 'Lobbies, kitchens, and break rooms.' },
-            { id: 'oc-pi-3', icon: 'mop', title: 'Restroom Hygiene', description: 'Thorough cleaning and restocking.' },
-            { id: 'oc-pi-4', icon: 'window', title: 'Trash & Recycling', description: 'Daily removal and liner replacement.' }
+            { id: 'oc-pi-1', icon: 'office', title: 'Workstation Sanitization', description: 'Desks, chairs, and high-touch surfaces.', image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=60' },
+            { id: 'oc-pi-2', icon: 'clean', title: 'Common Area Cleaning', description: 'Lobbies, kitchens, and break rooms.', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=60' },
+            { id: 'oc-pi-3', icon: 'mop', title: 'Restroom Hygiene', description: 'Thorough cleaning and restocking.', image: 'https://images.unsplash.com/photo-1590726489223-38f203883a9e?auto=format&fit=crop&w=600&q=60' },
+            { id: 'oc-pi-4', icon: 'window', title: 'Trash & Recycling', description: 'Daily removal and liner replacement.', image: 'https://images.unsplash.com/photo-1574974671999-d5b95b8a4a4d?auto=format&fit=crop&w=600&q=60' }
         ],
         keyBenefits: [
             { id: 'oc-kb-1', icon: 'productivity', title: 'Increased Productivity', description: 'A clean environment minimizes distractions and boosts employee focus.' },
@@ -430,20 +449,20 @@ const allServices: Service[] = [
 const allPosts: BlogPost[] = [
     { 
         id: 'how-to-stay-clean-tidy-during-a-busy-week',
-        image: 'https://images.unsplash.com/photo-1585421514484-5cd37413c1e9?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
         title: 'How to Stay Clean & Tidy During a Busy Week',
         date: 'October 26, 2023',
         comments: 12,
-        author: blogAuthor,
+        author: blogAuthors[0],
         content: '',
     },
     { 
         id: 'the-secret-of-cleaning-less-is-more',
-        image: 'https://images.unsplash.com/photo-1596527834339-b6973dd38515?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1596637311746-85f5b6f00f1c?auto=format&fit=crop&w=1200&q=80',
         title: 'The Secret of Cleaning: Less Is More',
         date: 'October 24, 2023',
         comments: 8,
-        author: blogAuthor,
+        author: blogAuthors[1],
         content: `
             <h2>The "Less is More" Philosophy in Cleaning</h2>
             <p>In a world that often glorifies "more" – more stuff, more activities, more hustle – the concept of "less is more" can feel revolutionary. When applied to cleaning, this philosophy isn't about neglecting your home; it's about being smarter and more intentional with your efforts. It’s about creating systems that prevent messes from getting out of control, allowing you to spend less time cleaning overall while enjoying a consistently tidier space.</p>
@@ -479,56 +498,56 @@ const allPosts: BlogPost[] = [
     },
     { 
         id: 'eco-friendly-cleaning-products-you-can-make-at-home',
-        image: 'https://images.unsplash.com/photo-1617871207927-827823ee90fa?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1616422285435-745275525927?auto=format&fit=crop&w=1200&q=80',
         title: 'Eco-Friendly Cleaning Products You Can Make at Home',
         date: 'October 21, 2023',
         comments: 15,
-        author: blogAuthor,
+        author: blogAuthors[2],
         content: '',
     },
     { 
         id: 'the-ultimate-guide-to-decluttering-your-office-space',
-        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=1200&q=80',
         title: 'The Ultimate Guide to Decluttering Your Office Space',
         date: 'October 18, 2023',
         comments: 5,
-        author: blogAuthor,
+        author: blogAuthors[3],
         content: '',
     },
     { 
         id: '5-minute-cleaning-hacks-for-a-sparkling-kitchen',
-        image: 'https://images.unsplash.com/photo-1600565193348-f74d3c2723a9?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1600585152220-01629c74D38c?auto=format&fit=crop&w=1200&q=80',
         title: '5-Minute Cleaning Hacks for a Sparkling Kitchen',
         date: 'October 15, 2023',
         comments: 22,
-        author: blogAuthor,
+        author: blogAuthors[0],
         content: '',
     },
     { 
         id: 'how-often-should-you-really-clean-everything-a-room-by-room-guide',
-        image: 'https://images.unsplash.com/photo-1595428774223-ef9252c872c5?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1527515637462-c0b4c8d2873b?auto=format&fit=crop&w=1200&q=80',
         title: 'How Often Should You Really Clean Everything? A Room-by-Room Guide',
         date: 'October 12, 2023',
         comments: 18,
-        author: blogAuthor,
+        author: blogAuthors[1],
         content: '',
     },
     { 
         id: 'the-top-10-benefits-of-a-clean-and-organized-home',
-        image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=80',
         title: 'The Top 10 Benefits of a Clean and Organized Home',
         date: 'October 9, 2023',
         comments: 25,
-        author: blogAuthor,
+        author: blogAuthors[2],
         content: '',
     },
     { 
         id: 'spring-cleaning-checklist-a-deep-clean-for-every-room',
-        image: 'https://images.unsplash.com/photo-1628177212239-a9a7c645e543?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1585435465945-bef5a93f8e49?auto=format&fit=crop&w=1200&q=80',
         title: 'Spring Cleaning Checklist: A Deep Clean for Every Room',
         date: 'October 5, 2023',
         comments: 11,
-        author: blogAuthor,
+        author: blogAuthors[3],
         content: '',
     },
     { 
@@ -537,16 +556,16 @@ const allPosts: BlogPost[] = [
         title: 'Post-Construction Cleaning: Why It\'s Best Left to Pros',
         date: 'October 2, 2023',
         comments: 7,
-        author: blogAuthor,
+        author: blogAuthors[0],
         content: '',
     },
     { 
         id: 'maximizing-productivity-with-a-clean-workspace',
-        image: 'https://images.unsplash.com/photo-1521737852577-6848d7879117?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80',
         title: 'Maximizing Productivity with a Clean Workspace',
         date: 'September 28, 2023',
         comments: 14,
-        author: blogAuthor,
+        author: blogAuthors[1],
         content: '',
     },
     { 
@@ -555,7 +574,7 @@ const allPosts: BlogPost[] = [
         title: 'Green Cleaning: Protecting Your Family and the Planet',
         date: 'September 25, 2023',
         comments: 19,
-        author: blogAuthor,
+        author: blogAuthors[2],
         content: '',
     },
     { 
@@ -564,7 +583,7 @@ const allPosts: BlogPost[] = [
         title: 'How to Clean and Disinfect for a Healthier Home',
         date: 'September 21, 2023',
         comments: 21,
-        author: blogAuthor,
+        author: blogAuthors[3],
         content: '',
     },
     { 
@@ -573,34 +592,34 @@ const allPosts: BlogPost[] = [
         title: 'The Overlooked Importance of Window Cleaning',
         date: 'September 18, 2023',
         comments: 9,
-        author: blogAuthor,
+        author: blogAuthors[0],
         content: '',
     },
     { 
         id: 'restoring-your-grout-and-tile-to-their-former-glory',
-        image: 'https://images.unsplash.com/photo-1603959143835-d24927926214?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1603712725038-9535114a5598?auto=format&fit=crop&w=1200&q=80',
         title: 'Restoring Your Grout and Tile to Their Former Glory',
         date: 'September 14, 2023',
         comments: 13,
-        author: blogAuthor,
+        author: blogAuthors[1],
         content: '',
     },
     { 
         id: 'carpet-care-101-extending-the-life-of-your-carpets',
-        image: 'https://images.unsplash.com/photo-1595704252321-83be81f963b5?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1566475456233-5c8e3bf55787?auto=format&fit=crop&w=1200&q=80',
         title: 'Carpet Care 101: Extending the Life of Your Carpets',
         date: 'September 11, 2023',
         comments: 16,
-        author: blogAuthor,
+        author: blogAuthors[2],
         content: '',
     },
     { 
         id: 'preparing-your-home-for-a-professional-cleaning-service',
-        image: 'https://images.unsplash.com/photo-1540518614846-7eded432c247?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
         title: 'Preparing Your Home for a Professional Cleaning Service',
         date: 'September 7, 2023',
         comments: 10,
-        author: blogAuthor,
+        author: blogAuthors[3],
         content: '',
     },
     { 
@@ -609,16 +628,16 @@ const allPosts: BlogPost[] = [
         title: 'The Psychology of Clean: How a Tidy Space Affects Your Mood',
         date: 'September 4, 2023',
         comments: 28,
-        author: blogAuthor,
+        author: blogAuthors[0],
         content: '',
     },
     { 
         id: 'commercial-cleaning-vs-residential-whats-the-difference',
-        image: 'https://images.unsplash.com/photo-1549492423-4002122c3954?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
         title: 'Commercial Cleaning vs. Residential: What\'s the Difference?',
         date: 'August 31, 2023',
         comments: 6,
-        author: blogAuthor,
+        author: blogAuthors[1],
         content: '',
     },
     { 
@@ -627,7 +646,7 @@ const allPosts: BlogPost[] = [
         title: 'Choosing the Right Cleaning Service for Your Business',
         date: 'August 28, 2023',
         comments: 10,
-        author: blogAuthor,
+        author: blogAuthors[2],
         content: '',
     },
     { 
@@ -636,7 +655,7 @@ const allPosts: BlogPost[] = [
         title: 'Maintaining a Clean and Hygienic Restaurant Kitchen',
         date: 'August 24, 2023',
         comments: 17,
-        author: blogAuthor,
+        author: blogAuthors[3],
         content: '',
     },
 ];

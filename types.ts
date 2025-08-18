@@ -117,7 +117,7 @@ export interface Service {
   gallery?: string[]; // Optional array of image URLs
   pricing: PricingInfo;
   faqs: FaqItem[];
-  packageIncludes?: { id: string; icon: string; title: string; description: string; }[];
+  packageIncludes?: { id: string; icon: string; title: string; description: string; image?: string; }[];
   keyBenefits?: KeyBenefit[];
   industries?: Industry[];
 }

@@ -1,14 +1,17 @@
 
+
 import React from 'react';
 import { ICONS } from '../constants';
 import { stripHtml } from '../utils';
 import AnimatedCard from './AnimatedCard';
+import MediaDisplay from './MediaDisplay';
 
 interface PackageItem {
   id: string;
   icon: string;
   title: string;
   description: string;
+  image?: string;
 }
 
 interface PackageIncludesSectionProps {
@@ -39,14 +42,22 @@ const PackageIncludesSection: React.FC<PackageIncludesSectionProps> = ({ items, 
                 key={item.id}
                 animation="fade-up"
                 delay={index * 100}
-                className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                 hasHoverLight={true}
               >
-                <div className="flex items-center justify-center h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-primary/10 text-primary mb-6">
-                  {Icon && <Icon />}
+                <div className="relative h-48 w-full">
+                    {item.image ? (
+                        <MediaDisplay src={item.image} alt={stripHtml(item.title)} className="w-full h-full object-cover"/>
+                    ) : (
+                        <div className="w-full h-full bg-gray-100 flex items-center justify-center text-primary">
+                            {Icon && <Icon />}
+                        </div>
+                    )}
                 </div>
-                <h3 className="text-base sm:text-lg font-bold font-heading text-gray-900 mb-2">{stripHtml(item.title)}</h3>
-                {item.description && <p className="text-xs sm:text-sm text-gray-600 mt-1 flex-grow">{stripHtml(item.description)}</p>}
+                <div className="p-6 flex flex-col flex-grow text-left">
+                    <h3 className="text-base sm:text-lg font-bold font-heading text-gray-900 mb-2">{stripHtml(item.title)}</h3>
+                    {item.description && <p className="text-xs sm:text-sm text-gray-600 flex-grow">{stripHtml(item.description)}</p>}
+                </div>
               </AnimatedCard>
             )
           })}

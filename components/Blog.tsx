@@ -64,10 +64,10 @@ const Blog: React.FC<BlogProps> = ({ isAdmin, section, onSectionChange }) => {
                                 key={post.id}
                                 animation="fade-up"
                                 delay={index * 100}
-                                className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col group"
+                                className="rounded-lg shadow-lg overflow-hidden flex flex-col group"
                                 hasHoverLight={true}
                             >
-                                <div className="flex flex-col flex-grow">
+                                <div className="flex flex-col flex-grow bg-white">
                                     <div className="relative h-56 w-full overflow-hidden">
                                       <a href={`#/blog/${post.id}`} className="block w-full h-full">
                                         <MediaDisplay 
@@ -77,7 +77,7 @@ const Blog: React.FC<BlogProps> = ({ isAdmin, section, onSectionChange }) => {
                                         />
                                       </a>
                                     </div>
-                                    <div className="p-6 text-left flex flex-col flex-grow">
+                                    <div className="p-6 text-left flex flex-col flex-grow bg-gray-50">
                                         <div className="text-sm text-gray-500 mb-2">
                                             <span>{post.date}</span>
                                             {' '}| {post.comments} Comments
@@ -91,12 +91,15 @@ const Blog: React.FC<BlogProps> = ({ isAdmin, section, onSectionChange }) => {
                                             />
                                           </a>
                                         </h3>
-                                        <div className="mt-auto pt-4 border-t border-gray-100">
-                                            <a href={`#/blog/${post.id}`} className="font-semibold text-primary hover:text-secondary transition-colors duration-300 group inline-flex items-center p-2 -m-2 rounded-lg cursor-pointer">
-                                                Learn More
-                                                <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
-                                                    <span aria-hidden="true" className="group-hover:hidden">→</span>
-                                                    <span aria-hidden="true" className="hidden group-hover:inline">👉</span>
+                                        <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                                            <div className="flex items-center">
+                                                <MediaDisplay src={post.author.avatar} alt={post.author.name} className="w-8 h-8 rounded-full mr-3" />
+                                                <span className="text-sm font-medium text-gray-800">{post.author.name}</span>
+                                            </div>
+                                            <a href={`#/blog/${post.id}`} className="font-semibold text-primary hover:text-secondary transition-colors duration-300 group inline-flex items-center p-2 -m-2 rounded-lg cursor-pointer text-sm">
+                                                Read More
+                                                <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+                                                    →
                                                 </span>
                                             </a>
                                         </div>
